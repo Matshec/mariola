@@ -21,7 +21,7 @@ describe('Faculty endpoints', function () {
     let token;
     beforeEach('Create database', async function () {
         await db.connection.sync({force: true})
-        await db.User.create(tester);
+        tester = await db.User.create(tester);
         token = jwt(tester)
     });
 
@@ -120,6 +120,7 @@ describe('Faculty endpoints', function () {
                         initialGroup: "4b"
                     })
                     .end((err, res) => {
+                        assert.assert(!err)
                         expect(res).to.have.status(200);
                     })
 

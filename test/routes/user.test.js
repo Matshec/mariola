@@ -10,7 +10,7 @@ const assert = chai.assert;
 
 describe('User test', function () {
 
-    describe('GET /api/user/me', function () {
+    describe('GET /api/users/me', function () {
         let user = {
             id: 0,
             name: "Jaś",
